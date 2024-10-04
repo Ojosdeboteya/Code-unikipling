@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Redirect Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Code to Access</h1>
+        <input type="text" id="codeInput" placeholder="Enter your code here">
+        <button onclick="checkCode()">Submit</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkCode() {
+            const codeInput = document.getElementById('codeInput').value;
+            const correctCode = 'NYC_1970'; // Replace with your actual code
+            const redirectUrl = 'https://spinthewheel.io/es'; // Replace with your target URL
+
+            if (codeInput === correctCode) {
+                window.location.href = redirectUrl;
+            } else {
+                document.getElementById('message').innerText = 'Incorrect code. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
